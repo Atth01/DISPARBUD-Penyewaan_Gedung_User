@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: #D77E3A">
+    <div class="d-flex justify-content-between mx-2">
+      <img src="../../assets/disparbud.png" alt="" width="250px" />
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="text-white">Logout</span>
+        <ion-icon name="log-out-outline" class="ms-1 text-white" style="font-size: 20px"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="text">Event</h1>
+  <swiper-container
+    #swiper
+    (afterinit)="swiperReady()"
+    (slidechange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true"
+    [autoplay]="{delay: 2000}">
+    <swiper-slide *ngFor="let image of images">
+      <img [src]="image"/>
+    </swiper-slide>
+    <!-- <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide> -->
+  </swiper-container>
+</ion-content>
